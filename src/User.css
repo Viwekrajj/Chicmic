@@ -7,6 +7,7 @@
 	height: 100vh;
 	background-color: rgb(253, 253, 253);
 	flex-direction: column;
+	border-right: 1px solid rgb(78, 78, 78);
 }
 .Login-user {
 	display: flex;
@@ -21,7 +22,7 @@
 	display: flex;
 	width: 70%;
 	height: 100vh;
-	background-color: rgb(71, 165, 42);
+	background-image: url(./images/background.png);
 }
 
 .SidebarChats {
@@ -48,21 +49,34 @@
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-	/* border-bottom: 2px solid black; */
+	background-color: #ededed;
 }
 .Login-user-images {
 	display: flex;
 	
 	margin-left: 10px;
 	margin-top: 10px;
-	height: 60px;
-	width: 60px;
+	height: 40px;
+	width: 40px;
 	border-radius: 50%;
 }
 .Login-user-text {
 	margin-right: 30px;
 	width: 100%;
-	padding-top: 7%;
+	padding-top: 4%;
 	padding-left: 0%;
-	border-bottom: 1px solid black;
+	/* border-bottom: 1px solid black; */
 }
+
+.display-block {
+	margin-top: 10%;
+	border: solid 2px red;
+	height: 300px;
+	width: 300px;
+	display: block;
+	z-index: 5;
+  }
+  
+  .display-none {
+	display: none;
+  }

@@ -36,7 +36,8 @@ export default class Display extends Component {
                 //     this.props.history.push("/Home")
                 // }
                 // alert("user login")
-                this.props.history.push("/Home")
+                console.log(this.state.email,"kabir");
+                this.props.history.push({pathname:"/Home",state:this.state.email});
 
                 
 

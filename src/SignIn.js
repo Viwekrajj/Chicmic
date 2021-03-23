@@ -299,8 +299,30 @@ export default class SignIn extends Component {
        
         this.checkpassword();
         this.final(e.target);
-        const user = this.state.email;
-        localStorage.setItem(user, JSON.stringify(this.state))
+        const user_key = this.state.email;
+        const user_data={
+            firstname:this.state.firstname,
+            lastname:this.state.lastname,
+            email:this.state.email,
+            password:this.state.firstname,
+            bday:this.state.bday,
+            contact:this.state.contact
+        }
+        const data={
+            firstname:this.state.firstname,
+            lastname:this.state.lastname,
+            email:this.state.email,
+            bday:this.state.bday,
+            contact:this.state.contact
+            
+
+        }
+        localStorage.setItem(user_key, JSON.stringify(user_data))
+        const fullData = JSON.parse(localStorage.getItem("full_data")) || []
+        fullData.push(data)
+        localStorage.setItem("full_data", JSON.stringify(fullData))
+
+        
 
     }
 
