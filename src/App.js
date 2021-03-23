@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route, withRouter,Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import SignIn from './SignIn'
+import Login from './Login'
+import Home from './Home'
+
+
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    {
+
+    }
+  }
+
+
+
+
+
+
+  render() {
+    console.log(this.props, 'propss')
+    return (
+      <div>
+
+        {/* {this.props.location.pathname === "/Login" ? <p></p> : <button className="Login" type="button" onClick={() => this.props.history.push("/Login")}>Log IN</button>}
+        {this.props.location.pathname === "/" ? <p></p> : <button className="Login" type="button" onClick={() => this.props.history.push("/")}>Sign Up</button>} */}
+
+
+
+        <Switch>
+          <Route path="/" component={SignIn} exact />
+          <Route path="/Login" component={Login} exact />
+          <Route path="/Home" component={Home} exact />
+        </Switch>
+
+
+
+
+        {/* {this.props.location.pathname==="/Login"?<p></p>:<button className="submit" type="button" onClick={() => this.props.history.push("/Login")}>Login IN</button>} */}
+
+
+
+
+
+
+
+      </div>
+    )
+  }
 }
 
-export default App;
+export default withRouter(App);
