@@ -5,6 +5,8 @@ import './User.css';
 import UserFriends from './UserFriends'
 import img from "./images/viwek.jpg"
 import "./modal.css"
+import { AiOutlineClose } from "react-icons/ai";
+
 export default class Sidebar extends Component {
     constructor(props){
         super(props)
@@ -13,12 +15,26 @@ export default class Sidebar extends Component {
             show:false,
             user_friends:"",
             user_friends_message:"",
-            check_user_friends:""
-
+            check_user_friends:"",
+            image:""
         }
-        
-       
+    }
 
+
+    convertImage=(e)=>{
+        let binartString=e.target.result;
+        this.setState({image:btoa(binartString)})
+
+    }
+    handleImage=(e)=>{
+        let file=e.target.files[0]
+        if(file)
+        {
+            const reader = new FileReader()
+            reader.onload=this.convertImage.bind(this);
+            reader.readAsBinaryString(file)
+        }
+    
     }
     handleChange=(e)=>{
         const regExForUserName = /^[A-Za-z]+$/;
@@ -83,45 +99,41 @@ export default class Sidebar extends Component {
     hideModel=()=>{
         const currentEmail = JSON.parse(localStorage.getItem(this.props.user_name)).email;
         
-        const userFriends = currentEmail.concat(currentEmail)
         const data={
-            user_friends:this.state.user_friends
+            user_friends:this.state.user_friends,
+            image:this.state.image
         }
-        console.log()
-        const currentdata=JSON.parse(localStorage.setItem(currentdata,data))||[]
-        currentdata.push(data)
-        const user_friend_list=JSON.parse(localStorage.setItem(user_friend_list,data))||{}
-        user_friend_list={
-            currentEmail:currentdata
-        }
-       
-        
-        
-        
-        
-        
-
+         
+        const friend_list=JSON.parse(localStorage.getItem("friend_list"))||{}
+        const arr = friend_list[currentEmail] || []
+        arr.push(data)
+        friend_list[currentEmail]=arr;
+        localStorage.setItem("friend_list", JSON.stringify(friend_list))
         this.setState({show:false})
 
        }
     
 
-    // temp=()=>{
-    //     console.log("hello")
-    //     const full_data=JSON.parse(localStorage.getItem("full_data"));
-    //     const current_User = JSON.parse(localStorage.getItem(this.props.user_name)).firstname;
-    //     return full_data.map(element => {
-    //        if(element.firstname!==current_User)
-    //         return (<SidebarChats name={element.firstname}/>)
-    //     });
+    temp=()=>{
+        console.log("hello")
+        const friends= JSON.parse(localStorage.getItem("friend_list"))[this.props.user_name];
+        console.log(friends,"friends")
+        
+        //  console.log(friends[0].image,"friends")
+        
+         return friends.map(element => {
+           
+            return (<SidebarChats name={element.user_friends} image={element.image}/>)
+        });
 
-    // }
+    }
     render() {
           const current_User = JSON.parse(localStorage.getItem(this.props.user_name)).firstname;
          
         
           
          console.log(current_User)
+         
          
         
         return (
@@ -138,13 +150,17 @@ export default class Sidebar extends Component {
                    {this.state.show &&  <UserFriends show={this.state.show}>
 
                        <div className = "modal">
+                       <h1 className="close" onClick={this.close}><AiOutlineClose/></h1>
                        <input className="model-input"
                        name="user_friends"
                        type="text" 
                        placeholder="enter user name"  
                        value={this.state.user_friends}
                        onChange={this.handleChange}></input>
-                       {this.state.user_friends_message}
+                       <p className="input-error">{this.state.user_friends_message}</p>
+                       <p className="image-text">Enter URl of your image</p>
+                       {/* <input className="image-input" type="file" onChange={this.handleImage}></input>
+                        */}
                        
                        <button className="model-button" type="button" onClick={this.hideModel}>submit</button>
 
@@ -152,8 +168,10 @@ export default class Sidebar extends Component {
                    </UserFriends>
                    } 
                 </div>
-            
-
+                
+                {JSON.parse(localStorage.getItem("friend_list")) && this.temp()}
+                
+               
 
 
 

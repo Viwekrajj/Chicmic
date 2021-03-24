@@ -1,12 +1,20 @@
 .header {
 	position: absolute;
 
-	background-color: #ededed;
+	background-color: rgb(253, 253, 253);
 	height: 50px;
 	width: 70%;
 }
+.logout-button{
+    margin-top: 15px;
+ margin-right: 50px;
+ float: right;
+ border: none;
+ background-color: white;
+
+}
 .footer {
-    margin-top: 38rem;
+    margin-top: 40rem;
 	position: absolute;
     position: fixed;
 	

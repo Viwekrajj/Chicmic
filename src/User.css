@@ -22,27 +22,42 @@
 	display: flex;
 	width: 70%;
 	height: 100vh;
-	background-image: url(./images/background.png);
+	background-color: white;
+	background-image: url(./images/wp4410716.jpg);
+	opacity: 1;
+	/* background-repeat: no-repeat; */
 }
 
 .SidebarChats {
 	display: flex;
-	/* border-bottom: solid 2px black; */
+	/* border-bottom: solid 1px black; */
 	left: 10%;
 	height: 60px;
 }
 
 .user-images {
-	border: solid 2px red;
+	
 	margin-top: 10px;
 	margin-bottom: 10px;
 	height: 50px;
 	width: 50px;
+	
 	border-radius: 50%;
 }
 .user-name {
+	margin-top: 30px;
 	display: flex;
-	margin-left: 50px;
+	padding-left: 50px;
+	font-family: 'Ubuntu', sans-serif;
+	border-bottom: solid 1px black;
+	width: 60%;
+
+}
+.user-edits{
+	margin-left: 0px;
+	margin-top: 42px;
+	background-color: white;
+	border: none;
 }
 .Login-user {
 	text-align: center;
@@ -85,4 +100,8 @@
 	  border: none;
 	  background-color: #ededed;
 	  margin-right: 10%;
+  }
+  .full-images{
+	height: 200px;
+	width: 200px;
   }
