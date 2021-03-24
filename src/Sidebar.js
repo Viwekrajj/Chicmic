@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { VscAdd } from "react-icons/vsc";
 import SidebarChats from './SidebarChats';
 import './User.css';
 import UserFriends from './UserFriends'
@@ -130,9 +131,10 @@ export default class Sidebar extends Component {
                     <div className="Login-user-text">
                     
                         <p >{current_User}</p>
+                        
                     </div>
                     
-                    <button type="button" onClick={this.showModel}>Add</button>
+                    <button className="button-add-model" type="button" onClick={this.showModel}><h1><VscAdd /></h1></button>
                    {this.state.show &&  <UserFriends show={this.state.show}>
 
                        <div className = "modal">
@@ -143,6 +145,7 @@ export default class Sidebar extends Component {
                        value={this.state.user_friends}
                        onChange={this.handleChange}></input>
                        {this.state.user_friends_message}
+                       
                        <button className="model-button" type="button" onClick={this.hideModel}>submit</button>
 
                        </div>

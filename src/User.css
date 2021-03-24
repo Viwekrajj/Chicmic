@@ -80,3 +80,9 @@
   .display-none {
 	display: none;
   }
+  .button-add-model
+  {
+	  border: none;
+	  background-color: #ededed;
+	  margin-right: 10%;
+  }
