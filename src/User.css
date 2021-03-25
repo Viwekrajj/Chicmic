@@ -5,9 +5,9 @@
 	display: flex;
 	width: 30%;
 	height: 100vh;
-	background-color: rgb(253, 253, 253);
+	background-color: white;
 	flex-direction: column;
-	border-right: 1px solid rgb(78, 78, 78);
+	border-right: 1px solid white;
 }
 .Login-user {
 	display: flex;
@@ -38,7 +38,7 @@
 .user-images {
 	
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-left: 10px;
 	height: 50px;
 	width: 50px;
 	
@@ -49,7 +49,7 @@
 	display: flex;
 	padding-left: 50px;
 	font-family: 'Ubuntu', sans-serif;
-	border-bottom: solid 1px black;
+	border-bottom: solid 2px #00607A;
 	width: 60%;
 
 }
@@ -64,7 +64,7 @@
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-	background-color: #ededed;
+	background-color: #00607A;
 }
 .Login-user-images {
 	display: flex;
@@ -78,8 +78,10 @@
 .Login-user-text {
 	margin-right: 30px;
 	width: 100%;
-	padding-top: 4%;
+	padding-top: 5%;
 	padding-left: 0%;
+	color: white;
+	font-size:20px;
 	/* border-bottom: 1px solid black; */
 }
 
@@ -98,10 +100,24 @@
   .button-add-model
   {
 	  border: none;
-	  background-color: #ededed;
+	  background-color: #00607A;
 	  margin-right: 10%;
   }
   .full-images{
 	height: 200px;
 	width: 200px;
   }
+ .header-user-images{
+	margin-top: 5px;
+	margin-left: 30px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+ } 
+ .header-user-text{
+	 position:absolute;
+	 display: inline-block;
+	 margin-top: 10px;
+	 margin-left: 30px;
+	 color: white;
+ }

@@ -1,7 +1,7 @@
 .header {
 	position: absolute;
 
-	background-color: rgb(253, 253, 253);
+	background-color: #00607A;
 	height: 50px;
 	width: 70%;
 }
@@ -10,7 +10,7 @@
  margin-right: 50px;
  float: right;
  border: none;
- background-color: white;
+ background-color: #00607A;
 
 }
 .footer {
@@ -18,7 +18,7 @@
 	position: absolute;
     position: fixed;
 	
-	background-color: #121b20;
+	background-color: #00607A;
 	height: 60px;
 	width: 70%;
 }
@@ -26,15 +26,15 @@
 .footer-input{
     
     
-    color: rgb(82, 81, 81);
+    color:white;
     width: 60%;
-    margin-left: 30%;
-    border-bottom: solid 1px rgb(82, 81, 81);
+    margin-left: 15%;
+    border-bottom: solid 1px white;
 }
 ::placeholder
 {
     font-size: 15px;
-    color: rgb(82, 81, 81);
+    color: white;
     opacity: 1;
 
 
@@ -42,15 +42,9 @@
 .footer-button
 {
     position: absolute;
-   
-	
     margin: 0px;
-    margin-top:5px;
+    margin-left: 15px;
+    margin-top:13px;
     border:none;
-
-
-    background-color: #121b20;
-
-
-
+    background-color:#00607A;
 }
